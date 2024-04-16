@@ -15,7 +15,7 @@ app.get('/calculator', (req, res) => {
   res.status(200).sendFile(path.join(__dirname, 'public', 'calculator.html'))
 })
 
-app.get('/*', (req, res) => {
+app.use('/*', (req, res) => {
   res.status(404).json({msg: "Not Found"})
 })
 
